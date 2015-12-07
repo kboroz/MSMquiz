@@ -1,0 +1,92 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{bbm}
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+\pgfdeclareimage[height=3.5cm]{logobig}{hucaselogo}
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+\title[Selected Topics of Mathematical Statistics]{Title}
+\authora{Björn Bokelmann}
+\authorb{}
+\authorc{}
+
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{http://case.hu-berlin.de}
+\def\linkc{}
+
+\institute{Ladislaus von Bortkiewicz Chair of Statistics \\
+C.A.S.E. -- Center for Applied Statistics\\
+and Economics\\
+Humboldt--Universität zu Berlin \\}
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic Probability Limit Theorems: The WLLN and SLLN}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\color{brown}
+Quiz: Proof Theorem 28 and 29.
+\color{black}
+\\
+Proof of Theorem 29 from Björn Bokelmann
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+
+
+For each $i \in \mathbb{N}$ we define $Y_{i}=X_{i}-\mu$. \\
+Because we applied a continuous mapping on $X_{i}$ to get $Y_{i}$, the random variables $Y_{1},Y_{2},...$ are i.i.d.. \\
+It further holds $E[Y_{i}]=0$ for each $i \in \mathbb{N}$ and therefore \\
+\begin{equation}\sigma^{2}=Var[Y_{i}]=E[Y_{i}^{2}] \end{equation} \\
+and \begin{equation} E[\underset{i=1}{\overset{n}{\sum}}Y_{i}]=0  \end{equation}
+}
+\frame{
+With Bienaymes Formula we get \\
+
+\begin{align*} 
+E[(\underset{i=1}{\overset{n}{\sum}}Y_{i})^{2}]&=E[(\underset{i=1}{\overset{n}{\sum}}Y_{i}-E[\underset{i=1}{\overset{n}{\sum}}Y_{i}])^{2}]\\
+&=Var[\underset{i=1}{\overset{n}{\sum}}Y_{i}]\\
+&=\underset{i=1}{\overset{n}{\sum}}Var[Y_{i}]\\
+&=n\cdot \sigma^{2} 
+\end{align*}
+}
+\frame{
+Hence it holds
+\begin{align*} 
+E[|\bar{X_{n}}-\mu|^{2}]&=E[(\frac{1}{n}\underset{i=1}{\overset{n}{\sum}}(X_{i}-\mu))^{2}]\\
+&=\frac{1}{n^{2}}E[(\underset{i=1}{\overset{n}{\sum}}Y_{i})^{2}]\\
+&=\frac{1}{n^{2}}\cdot n\cdot \sigma^{2}\\
+&=\frac{1}{n}\sigma^{2} \overset{n\rightarrow \infty} {\rightarrow} 0 
+\end{align*}. 
+}
+
+
+
+
+\end{document}
