@@ -1,0 +1,15 @@
+# Name of QuantLet : MSM
+
+# Published in : MSMLLN
+
+# Description : transformation of a random variable with a given mean
+# and variance to an Asymptotic normal distribution with mean zero and
+# variance 1.
+
+# Keywords : 'Standard Normal, Asymptotic, Graphical Representation, pdf'
+
+# Author : Luis Alejandro Sarmiento Abogado
+
+# Submitted : Tue, December 02 2015 by Luis Alejandro Sarmiento Abogado
+
+# Datafile : Null
