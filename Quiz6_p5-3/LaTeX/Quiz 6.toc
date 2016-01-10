@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Task}{2}{0}{1}
+\beamer@sectionintoc {2}{Proof}{2}{0}{2}
+\beamer@sectionintoc {3}{Proof: k=1}{2}{0}{3}
+\beamer@sectionintoc {4}{Proof: k=2}{2}{0}{4}
+\beamer@sectionintoc {5}{Proof: k=3}{2}{0}{5}
+\beamer@sectionintoc {6}{Proof: k=4}{2}{0}{6}

@@ -1,0 +1,212 @@
+% Type of the document
+\documentclass{beamer}
+
+% elementary packages:
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+% additional packages
+\usepackage{bbm}
+
+% packages supplied with ise-beamer:
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+% Change the pictures here:
+% logobig and logosmall are the internal names for the pictures: do not modify them. 
+% Pictures must be supplied as JPEG, PNG or, to be preferred, PDF
+\pgfdeclareimage[height=2cm]{logobig}{hulogo}
+% Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
+% right corner:
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+% Title page outline:
+% use this number to modify the scaling of the headline on title page
+\renewcommand{\titlescale}{1.0}
+% the title page has two columns, the following two values determine the percentage each one should get
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+% Define the title.Don't forget to insert an abbreviation instead 
+% of "title for footer". It will appear in the lower left corner:
+\title[MSM: Quiz 6]{Selected Topics of Mathematical Statistics: Quiz 6}
+% Define the authors:
+\authora{Josephine Kraft} % a-c
+
+% Define any internet addresses, if you want to display them on the title page:
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{}
+\def\linkc{}
+% Define the institute:
+\institute{Ladislaus von Bortkiewicz Chair of Statistics \\
+Humboldt--Universit\"at zu Berlin \\}
+
+% Comment the following command, if you don't want, that the pdf file starts in full screen mode:
+\hypersetup{pdfpagemode=FullScreen}
+
+%Start of the document
+\begin{document}
+
+% Titlepage
+\frame[plain]{
+\titlepage
+}
+
+% Quiz 6: Task
+
+\section{Task}
+
+\frame{
+\frametitle{Quiz 6}
+
+\begin{Large}\noindent \textbf{Prove the following property of the characteristic function for the Standard Normal Distribution for $k=1,2,3,4$:}
+\begin{equation*}
+\varphi^{(k)}_{X}(t)|_{t=0}=i^{k}\cdot \mathbb{E}[X^k]
+\end{equation*}
+\end{Large}
+
+}
+
+\section{Proof}
+
+\frame{
+\frametitle{Characteristic Function of Standard Normal Distribution}
+
+In Quiz 4 it was shown that the characteristic function for a random variable $X\sim N(0,1)$ is of the following form:
+
+\begin{equation*}
+\varphi_X(t)=e^{-\frac{1}{2}t^2},\ \hspace{3mm}t\in\mathbb{R}
+\end{equation*}
+
+}
+
+% k=1
+
+\section{Proof: k=1}
+
+\frame{
+\frametitle{k=1}
+
+\begin{equation*}
+\begin{align*}
+\varphi^{(1)}_{X}(t)\ |_{t=0}	&=\frac{d}{dt}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=[-t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=0 \\
+														&=i^1\cdot \mathbb{E}[X]
+\end{align*}
+\end{equation*} \\ \vspace{3mm}
+because $\mathbb{E}[X]=0$ for the Standard Normal Distribution.
+
+}
+
+% k=2
+
+\section{Proof: k=2}
+
+\frame{
+\frametitle{k=2}
+
+\begin{equation*}
+\begin{align*}
+\varphi^{(2)}_{X}(t)\ |_{t=0}	&=\frac{d^2}{dt^2}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=\frac{d}{dt}\ [-t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=[-e^{-\frac{t^2}{2}} + t^2\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=-1 \\
+														&=i^2\cdot Var(X) \\
+														&=i^2\cdot \mathbb{E}[X^2]
+\end{align*}
+\end{equation*} \\ \vspace{3mm}
+because $Var(X)=1$ and $\mathbb{E}[X]=0$ for the Standard Normal Distribution.
+
+}
+
+% k=3
+
+\section{Proof: k=3}
+
+\frame{
+\frametitle{k=3}
+
+\begin{equation*}
+\begin{align*}
+\varphi^{(3)}_{X}(t)\ |_{t=0}	&=\frac{d^3}{dt^3}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=\frac{d}{dt}\ [-e^{-\frac{t^2}{2}} + t^2\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=\frac{d}{dt}\ [-e^{-\frac{t^2}{2}}]\ |_{t=0} + \frac{d}{dt}\ [t^2\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=[t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} + [2t\cdot e^{-\frac{t^2}{2}} - t^3\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=0 \\
+														&=i^3\cdot \mathbb{E}[X^3]
+\end{align*}
+\end{equation*}\\
+\\
+because $\mathbb{E}[X^3]=0$ for the Standard Normal Distribution.
+
+}
+
+% k=4
+
+\section{Proof: k=4}
+
+\frame{
+\frametitle{k=4}
+
+\begin{equation*}
+\begin{align*}
+\varphi^{(4)}_{X}(t)\ |_{t=0}	&=\frac{d^4}{dt^4}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=\frac{d}{dt}\ [t\cdot e^{-\frac{t^2}{2}} + 2t\cdot e^{-\frac{t^2}{2}} - t^3\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+														&=\frac{d}{dt}\ [t e^{-\frac{t^2}{2}}]\ |_{t=0} + \frac{d}{dt}\ [2t e^{-\frac{t^2}{2}}]\ |_{t=0} - \frac{d}{dt}\ [t^3 e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+\end{align*}
+\end{equation*}
+
+% 													%	&=
+
+}
+
+\frame{
+\frametitle{k=4}
+
+It holds:
+\begin{equation}
+\frac{d}{dt}\ [t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0}&=[e^{-\frac{t^2}{2}} - t^2\cdot e^{-\frac{t^2}{2}}]|_{t=0} = 1
+\end{equation}
+
+\begin{equation}
+\frac{d}{dt}\ [2t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0}&=2\cdot [e^{-\frac{t^2}{2}} - t^2\cdot e^{-\frac{t^2}{2}}]|_{t=0} = 2
+\end{equation}
+
+\begin{equation}
+\frac{d}{dt}\ [t^3\cdot e^{-\frac{t^2}{2}}]\ |_{t=0}&=[3\cdot t^2\cdot e^{-\frac{t^2}{2}} - t^4\cdot e^{-\frac{t^2}{2}}]|_{t=0} = 0
+\end{equation}
+
+}
+
+\frame{
+\frametitle{k=4}
+
+With (1), (2), (3) it follows:
+
+\begin{equation*}
+\begin{align*}
+\varphi^{(4)}_{X}(t)\ |_{t=0}	&=1+2-0 \\
+															&=3\\
+															&=i^4\cdot \mathbb{E}[X^4]
+\end{align*}
+\end{equation*}
+because $i^4=i^2\cdot i^2=(-1)\cdot(-1)=1$ and $\mathbb{E}[X^4]=3$ for the Standard Normal Distribution.
+
+}
+
+\end{document}
