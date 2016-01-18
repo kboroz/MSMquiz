@@ -84,13 +84,13 @@ Humboldt--Universit\"at zu Berlin \\}
 Let $X\sim B(n,p)$. Then:
 \begin{equation*}
 \begin{align*}
-\varphi_X\left(t\right)&=\operatorname{E}\left(\exp\left\{\mathbf{i}tX\right\}\right)=\sum_{k=0}^n \exp\left\{\mathbf{i}tk\right\}\cdot \operatorname{P}\left(X=k\right) \\
-				    &=\sum_{k=0}^n \exp\left\{\mathbf{i}tk\right\}\cdot \binom{n}{k}\cdot p^k\cdot \left(1-p\right)^{n-k} \\
-						&=\sum_{k=0}^n \binom{n}{k}\cdot \left(\exp\left\{\mathbf{i}t\right\} \cdot p\right)^k \cdot \left(1-p\right)^{n-k} \\
-						&= \left[\exp\left\{\mathbf{i}t\right\} \cdot p + \left\{1-p\right\}\right]^n
+\varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\sum_{k=0}^n \exp\left(\mathbf{i}tk\right)\cdot \operatorname{P}\left(X=k\right) \\
+				    &=\sum_{k=0}^n \exp\left(\mathbf{i}tk\right)\cdot \binom{n}{k}\cdot p^k\cdot \left[1-p\right]^{n-k} \\
+						&=\sum_{k=0}^n \binom{n}{k}\cdot \left[\exp\left(\mathbf{i}t\right) \cdot p\right]^k \cdot \left[1-p\right]^{n-k} \\
+						&= \left[\exp\left(\mathbf{i}t\right) \cdot p + \left\{1-p\right\}\right]^n
 \end{align*}
 \end{equation*} \\ \vspace{3mm}
-because $\left(a+b\right)^n=\sum_{k=0}^n \binom{n}{k} a^k b^{n-k}$ for $n\in \mathbbm{N}$.
+because $\left[a+b\right]^n=\sum_{k=0}^n \binom{n}{k}\cdot a^k\cdot b^{n-k}$ for $n\in \mathbbm{N}$.
 
 }
 
@@ -103,13 +103,64 @@ because $\left(a+b\right)^n=\sum_{k=0}^n \binom{n}{k} a^k b^{n-k}$ for $n\in \ma
 Let $X\sim \operatorname{Pois}(\lambda)$. Then:
 \begin{equation*}
 \begin{align*}
-\varphi_X\left(t\right)&=\operatorname{E}\left(\exp\left\{\mathbf{i}tX\right\}\right)=\sum_{k=0}^{\infty} \exp\left\{\mathbf{i}tk\right\} \cdot \operatorname{P}\left(X=k\right) \\
-						&=\sum_{k=0}^{\infty} \exp\left\{\mathbf{i}tk\right\} \cdot \exp\left\{-\lambda\right\} \cdot \frac{\lambda^k}{k!} \\
-						&= \exp\left\{-\lambda\right\}\cdot \sum_{k=0}^{\infty} \frac{\left(\lambda\cdot \exp\left\{\mathbf{i}t\right\}\right)^k}{k!} \\
-						&= \exp\left\{-\lambda\right\}\cdot \exp\left\{\lambda\cdot \exp\left\{\mathbf{i}t\right\}\right\}= \exp\left\{\lambda \cdot \left(\exp\left\{\mathbf{i}t\right\}-1\right)\right\}
+\varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\sum_{k=0}^{\infty} \exp\left(\mathbf{i}tk\right) \cdot \operatorname{P}\left(X=k\right) \\
+						&=\sum_{k=0}^{\infty} \exp\left(\mathbf{i}tk\right) \cdot \exp\left(-\lambda\right) \cdot \frac{\lambda^k}{k!} \\
+						&= \exp\left(-\lambda\right)\cdot \sum_{k=0}^{\infty} \frac{\left[\lambda\cdot \exp\left(\mathbf{i}t\right)\right]^k}{k!} \\
+						&= \exp\left(-\lambda\right)\cdot \exp\left(\lambda\cdot \exp\left(\mathbf{i}t\right)\right)= \exp\left(\lambda \cdot \left[\exp\left(\mathbf{i}t\right)-1\right]\right)
 \end{align*}
 \end{equation*}
-because $\exp\left\{x\right\} = \sum_{k=0}^\infty \frac{x^k}{k!}$ for $x\in \mathbbm{R}$.
+because $\exp\left(x\right) = \sum_{k=0}^\infty \frac{x^k}{k!}$ for $x\in \mathbbm{R}$.
+}
+
+% Exponential Distribution
+
+\section{Exponential Distribution}
+
+\frame{
+\frametitle{Exponential Distribution}
+Let $X\sim \operatorname{Exp}(\lambda)$. Then:
+\begin{equation*}
+\begin{align*}
+\varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right] \\
+						&=\int_0^\infty \exp\left(\mathbf{i}tx\right) \cdot f(x)\ dx \\
+						&=\int_0^\infty \exp\left(\mathbf{i}tx\right) \cdot \lambda\cdot \exp\left(-\lambda x\right)\ dx \\
+						&=\lambda\cdot\int_0^\infty \exp\left(\mathbf{i}tx-\lambda x\right)\  dx \\
+						&=\lambda\cdot\int_0^\infty \exp\left(\left[\mathbf{i}t-\lambda\right]\cdot x\right)\  dx \\
+\end{align*}
+\end{equation*}
+
+}
+
+\frame{
+\frametitle{Exponential Distribution}
+
+\begin{equation*}
+\begin{align*}
+\varphi_X\left(t\right)&=\lambda\cdot\int_0^\infty \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot x\right)\  dx \\
+						&=\lambda\cdot\left[\left.-\frac{1}{\lambda-\mathbf{i}t}\cdot \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot x \right)\right]\right|_0^\infty \\
+						&=-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left[ \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot \infty\right) - \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot 0\right)\right] \\
+						&=-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left[\lim_{a\rightarrow \infty} \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot a\right) - 1\right] \\
+						&\overset{\text{(1)}}{=}-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left[0-1\right]=\frac{\lambda}{\lambda-\mathbf{i}t}
+\end{align*}
+\end{equation*}
+
+}
+
+\frame{
+\frametitle{Exponential Distribution}
+To show (1), we prove that 
+\begin{equation*}
+\lim_{a\rightarrow \infty} \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot a\right) = 0 \eqno  (\ast)
+\end{equation*}
+It holds:
+\begin{equation*}
+\begin{align*}
+\lim_{a\rightarrow\infty} \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot a\right) &= \lim_{a\rightarrow\infty} \exp\left(-\lambda a + \mathbf{i}t a\right) \\
+&= \lim_{a\rightarrow\infty} \exp\left(-\lambda a\right)\cdot \exp\left(\mathbf{i}t a\right) \\
+&= 0
+\end{align*}
+\end{equation*}
+because $\lim_{a\rightarrow\infty} \exp\left(-\lambda a\right)=0$ and $|\exp\left(\mathbf{i}t a\right)|=1$. Hence, $(\ast)$ was proved and we get $\varphi_X\left(t\right)=\frac{\lambda}{\lambda-\mathbf{i}t}$.
 }
 
 % Standard Normal Distrbution
@@ -121,11 +172,11 @@ because $\exp\left\{x\right\} = \sum_{k=0}^\infty \frac{x^k}{k!}$ for $x\in \mat
 Let $X\sim N(0,1)$. Then:
 \begin{equation*}
 \begin{align*}
-\varphi_X\left(t\right)&=\operatorname{E}\left(\exp\left\{\mathbf{i}tX\right\}\right)=\int_{-\infty}^\infty \exp\left\{\mathbf{i}tx\right\} \cdot \frac{1}{\sqrt{2\pi}} \exp\left\{-\frac{x^2}{2}\right\}\ dx \\
-						&= \frac{1}{\sqrt{2\pi}}\ \bigg[\int_{-\infty}^0 \exp\left\{\mathbf{i}tx\right\}\cdot \exp\left\{-\frac{x^2}{2}\right\}\ dx \\ 
-						&\qquad +\ \int_0^\infty \exp\left\{\mathbf{i}tx\right\}\cdot \exp\left\{-\frac{x^2}{2}\right\}\ dx\ \bigg] \\
-						&=\frac{1}{\sqrt{2\pi}}\ \bigg[\int_0^\infty \exp\left\{-\mathbf{i}tx\right\}\cdot \exp\left\{-\frac{x^2}{2}\right\}\ dx \\
-						&\qquad + \int_0^\infty \exp\left\{\mathbf{i}tx\right\}\cdot \exp\left\{-\frac{x^2}{2}\right\}\ dx\ \bigg]
+\varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\int_{-\infty}^\infty \exp\left(\mathbf{i}tx\right) \cdot \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right)\ dx \\
+						&= \frac{1}{\sqrt{2\pi}}\ \bigg[\int_{-\infty}^0 \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\ 
+						&\qquad +\ \int_0^\infty \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx\ \bigg] \\
+						&=\frac{1}{\sqrt{2\pi}}\ \bigg[\int_0^\infty \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\
+						&\qquad + \int_0^\infty \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx\ \bigg]
 \end{align*}
 \end{equation*}
 
@@ -136,12 +187,12 @@ Let $X\sim N(0,1)$. Then:
 
 \begin{equation*}
 \begin{align*}
-\varphi_X\left(t\right)&=\frac{1}{\sqrt{2\pi}}\cdot \bigg[\int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot \exp\left\{\mathbf{i}tx\right\} \\ 
-&\qquad +\ \exp\left\{-\frac{x^2}{2}\right\}\cdot \exp\left\{-\mathbf{i}tx\right\}\ dx\ \bigg] \\
-&=\frac{1}{\sqrt{2\pi}}\cdot\int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot \left[\exp\left\{\mathbf{i}tx\right\} + \exp\left\{-\mathbf{i}tx\right\}\right]\ dx \\
-&=\frac{1}{\sqrt{2\pi}}\cdot\int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot 2 \cdot \operatorname{cos}\left(tx\right)\ dx \\
-&=\frac{2}{\sqrt{2\pi}}\cdot\int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot \operatorname{cos}\left(tx\right)\ dx
-\overset{\text{(1)}}{=}\exp\left\{-\frac{t^2}{2}\right\}
+\varphi_X\left(t\right)&=\frac{1}{\sqrt{2\pi}}\cdot \bigg[\int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \exp\left(\mathbf{i}tx\right) \\ 
+&\qquad +\ \exp\left(-\frac{x^2}{2}\right)\cdot \exp\left(-\mathbf{i}tx\right)\ dx\ \bigg] \\
+&=\frac{1}{\sqrt{2\pi}}\cdot\int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \left[\exp\left(\mathbf{i}tx\right) + \exp\left(-\mathbf{i}tx\right)\right]\ dx \\
+&=\frac{1}{\sqrt{2\pi}}\cdot\int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot 2 \cdot \operatorname{cos}\left(tx\right)\ dx \\
+&=\frac{2}{\sqrt{2\pi}}\cdot\int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \operatorname{cos}\left(tx\right)\ dx
+\overset{\text{(1)}}{=}\exp\left(-\frac{t^2}{2}\right)
 \end{align*}
 \end{equation*}
 
@@ -151,18 +202,18 @@ Let $X\sim N(0,1)$. Then:
 \frametitle{Standard Normal Distribution}
 To prove (1) let 
 \begin{equation*}
-F\left(t\right)\stackrel{\operatorname{def}}{=}\varphi_X\left(t\right)=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot \operatorname{cos}\left(tx\right)\ dx
+F\left(t\right)\stackrel{\operatorname{def}}{=}\varphi_X\left(t\right)=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \operatorname{cos}\left(tx\right)\ dx
 \end{equation*}
 
 We show that 
 \begin{equation*}
 F'\left(t\right)=-t\cdot F\left(t\right) \eqno  (\ast)
 \end{equation*}
-This ordinary differential equation has the solution $F\left(t\right)=c\cdot \exp\left\{-\frac{t^2}{2}\right\}$, where c is a constant. Since we have 
+This ordinary differential equation has the solution $F\left(t\right)=c\cdot \exp\left(-\frac{t^2}{2}\right)$, where c is a constant. Since we have 
 \begin{equation*}
-F\left(0\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}\cdot \exp\left\{-\frac{x^2}{2}\right\}\ dx = 1
+F\left(0\right)=\int_{-\infty}^\infty \frac{1}{\sqrt{2\pi}}\cdot \exp\left(-\frac{x^2}{2}\right)\ dx = 1
 \end{equation*}
-we get $c=1$. Hence, $\varphi_X\left(t\right)=F\left(t\right)=\exp\left\{-\frac{t^2}{2}\right\}$.
+we get $c=1$. Hence, $\varphi_X\left(t\right)=F\left(t\right)=\exp\left(-\frac{t^2}{2}\right)$.
 }
 
 \frame{
@@ -170,14 +221,14 @@ we get $c=1$. Hence, $\varphi_X\left(t\right)=F\left(t\right)=\exp\left\{-\frac{
 
 \begin{equation*}
 \begin{align*}
-F'\left(t\right)&=\frac{d}{dt}\ \left[ \frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot \operatorname{cos}\left(tx\right)\  dx \right]\\
-&=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot \frac{d}{dt}\ \left[ \operatorname{cos}\left(tx\right) \right]\ dx \\
-&=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty -\exp\left\{-\frac{x^2}{2}\right\}\cdot x\cdot \operatorname{sin}\left(tx\right)\ dx
+F'\left(t\right)&=\frac{d}{dt}\ \left[ \frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \operatorname{cos}\left(tx\right)\  dx \right]\\
+&=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \frac{d}{dt}\ \left[ \operatorname{cos}\left(tx\right) \right]\ dx \\
+&=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty -\exp\left(-\frac{x^2}{2}\right)\cdot x\cdot \operatorname{sin}\left(tx\right)\ dx
 \end{align*}
 \end{equation*}
 
 Integration by parts: \\ 
-$u\left(x\right)=\exp\left\{-\frac{x^2}{2}\right\}$ \hspace{7mm} $u'\left(x\right)=-x\cdot \exp\left\{-\frac{x^2}{2}\right\}$ \\ 
+$u\left(x\right)=\exp\left(-\frac{x^2}{2}\right)$ \hspace{7mm} $u'\left(x\right)=-x\cdot \exp\left(-\frac{x^2}{2}\right)$ \\ 
 $v\left(x\right)=\operatorname{sin}\left(tx\right)$ \hspace{14mm} $v'\left(x\right)=t\cdot \operatorname{cos}\left(tx\right)$
 
 }
@@ -187,16 +238,15 @@ $v\left(x\right)=\operatorname{sin}\left(tx\right)$ \hspace{14mm} $v'\left(x\rig
 
 \begin{equation*}
 \begin{align*}
-F'\left(t\right)&=\frac{2}{\sqrt{2\pi}}\cdot \bigg[\left(\left.\exp\left\{-\frac{x^2}{2}\right\}\cdot \operatorname{sin}\left(tx\right)\right)\right|_0^\infty \\
-&\qquad -\ \int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot t \cdot \operatorname{cos}\left(tx\right)\ dx\ \bigg] \\
-&=-\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left\{-\frac{x^2}{2}\right\}\cdot t \cdot \operatorname{cos}\left(tx\right)\ dx \\
-&=-t\cdot \int_0^\infty \frac{1}{\sqrt{2\pi}}\exp\left\{-\frac{x^2}{2}\right\}\cdot 2 \cdot \operatorname{cos}\left(tx\right)\ dx \\
+F'\left(t\right)&=\frac{2}{\sqrt{2\pi}}\cdot \bigg[\left\{\left.\exp\left(-\frac{x^2}{2}\right)\cdot \operatorname{sin}\left(tx\right)\right\}\right|_0^\infty \\
+&\qquad -\ \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot t \cdot \operatorname{cos}\left(tx\right)\ dx\ \bigg] \\
+&=-\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot t \cdot \operatorname{cos}\left(tx\right)\ dx \\
+&=-t\cdot \int_0^\infty \frac{1}{\sqrt{2\pi}}\exp\left(-\frac{x^2}{2}\right)\cdot 2 \cdot \operatorname{cos}\left(tx\right)\ dx \\
 &=-t\cdot F\left(t\right)
 \end{align*}
 \end{equation*}
-Hence, $(\ast)$ was proved and we get $\varphi_X\left(t\right)=\exp\left\{-\frac{t^2}{2}\right\}$.
+Hence, $(\ast)$ was proved and we get $\varphi_X\left(t\right)=\exp\left(-\frac{t^2}{2}\right)$.
 
 }
-
 
 \end{document}
