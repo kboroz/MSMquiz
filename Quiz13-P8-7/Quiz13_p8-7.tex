@@ -25,8 +25,45 @@
 \usepackage{colordef}
 \usepackage{beamerdefs}
 \usepackage{lvblisting}
+% Pictures must be supplied as JPEG, PNG or, to be preferred, PDF
+\pgfdeclareimage[height=4.5cm]{logobig}{LogoIRTG}
+% Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
+% right corner:
+%\pgfdeclareimage[height=0.7cm]{logosmall}{MSM_AN.png}
 
+% Title page outline:
+% use this number to modify the scaling of the headline on title page
+\renewcommand{\titlescale}{1.0}
+% the title page has two columns, the following two values determine the percentage each one should get
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+% Define the title.Don't forget to insert an abbreviation instead 
+% of "title for footer". It will appear in the lower left corner:
+\title[Solutions to Quizzes]{Solutions to Quizzes}
+% Define the authors:
+\authora{Ya Qian} % a-c
 \begin{document}
+% Define any internet addresses, if you want to display them on the title page:
+\def\linka{lvb.wiwi.hu-berlin.de}
+\def\linkb{\\case.hu-berlin.de}
+\def\linkc{\\irtg1792.hu-berlin.de}
+% Define the institute:
+\institute{Ladislaus von Bortkiewicz Chair of Statistics\\
+C.A.S.E. -- Center for Applied Statistics\\
+and Economics\\
+Humboldt--Universit\"at zu Berlin\\}
+
+% Comment the following command, if you don't want, that the pdf file starts in full screen mode:
+\hypersetup{pdfpagemode=FullScreen}
+
+%Start of the document
+\begin{document}
+
+% create the title slide, layout controlled in beamerdefs.sty and the foregoing specifications
+\frame[plain]{
+\titlepage
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Solution to Quizzes}
