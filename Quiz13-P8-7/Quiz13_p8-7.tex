@@ -1,0 +1,60 @@
+% Type of the document
+\documentclass{beamer}
+
+% elementary packages:
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+% additional packages
+\usepackage{bbm}
+
+% packages supplied with ise-beamer:
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solution to Quizzes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\frametitle{Quiz 13 - Derive the above m.f. for $X \sim \operatorname{N}(\mu,{\sigma}^2)$ and $X \sim \operatorname{B}(1,p)$}
+\begin{itemize}
+\item For continuous $r.v. X \in \mathbbm{R}$, moment generating function is $M_X(t)=\operatorname{E}[e^{tX}]=\int_{-\infty}^{\infty}e^{tx}f(x)dx$:\\
+Therefore for $X \sim \operatorname{N}(\mu,{\sigma}^2)$, we have \\
+\begin{eqnarray*}
+M_X(t)=\operatorname{E}[e^{tX}]
+&=&\int_{-\infty}^{\infty}e^{tx}\cdot \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\mu)^2}{2 {\sigma}^2}}dx\\
+&=&\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{[x-(\mu+ t{\sigma}^2)]^2}{2\sigma^2}}\cdot e^{(t\mu +t^2{\sigma}^2/2)}dx\\
+&=&1\cdot exp(t\mu+ t^2\sigma^2/2)=exp(t\mu+ t^2{\sigma}^2/2)
+\end{eqnarray*}
+\end{itemize}
+}
+
+\frame{
+\frametitle{Quiz 13 - Derive the above m.f. for $X \sim \operatorname{N}(\mu,{\sigma}^2)$ and $X \sim \operatorname{B}(1,p)$}
+\begin{itemize}
+\item For discrete $r.v. X \in \mathbbm{Z}$, moment generating function is $M_X(t)=\sum_i {e^{tx_i}\cdot p_i}$\\
+Therefore for $X \sim \operatorname{B}(1,p)$, we have \\
+\begin{eqnarray*}
+M_X(t)=e^{t\cdot 0}\cdot (1-p)+e^{t\cdot 1}\cdot p =1-p+pe^t
+\end{eqnarray*}
+
+
+\end{itemize}
+}
+\end{document}
