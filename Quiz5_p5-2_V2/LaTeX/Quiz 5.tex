@@ -1,0 +1,125 @@
+% Type of the document
+\documentclass{beamer}
+
+% elementary packages:
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+% additional packages
+\usepackage{bbm}
+
+% packages supplied with ise-beamer:
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+% Change the pictures here:
+% logobig and logosmall are the internal names for the pictures: do not modify them. 
+% Pictures must be supplied as JPEG, PNG or, to be preferred, PDF
+\pgfdeclareimage[height=2cm]{logobig}{hulogo}
+% Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
+% right corner:
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+% Title page outline:
+% use this number to modify the scaling of the headline on title page
+\renewcommand{\titlescale}{1.0}
+% the title page has two columns, the following two values determine the percentage each one should get
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+% Define the title.Don't forget to insert an abbreviation instead 
+% of "title for footer". It will appear in the lower left corner:
+\title[MSM: Quiz 5]{Selected Topics of Mathematical Statistics: Quiz 5}
+% Define the authors:
+\authora{Josephine Kraft} % a-c
+
+% Define any internet addresses, if you want to display them on the title page:
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{}
+\def\linkc{}
+% Define the institute:
+\institute{Ladislaus von Bortkiewicz Chair of Statistics \\
+Humboldt--Universit\"at zu Berlin \\}
+
+% Comment the following command, if you don't want, that the pdf file starts in full screen mode:
+\hypersetup{pdfpagemode=FullScreen}
+
+%Start of the document
+\begin{document}
+
+% Titlepage
+\frame[plain]{
+\titlepage
+}
+
+% Quiz 5: Task
+
+\section{Task}
+
+\frame{
+\frametitle{Quiz 5}
+\begin{Large}\noindent \textbf{Prove the following equation for the Standard Normal Distribution:}
+\begin{equation*}
+f\left(x\right)=\frac{1}{2\pi}\cdot\int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot\varphi_X(t)\ dt \eqno  (\ast)
+\end{equation*}
+\end{Large}
+}
+
+% Quiz 5: Proof
+\section{Proof}
+
+\frame{
+\frametitle{Proof}
+Let $X\sim N(0,1)$. Define
+\begin{equation*}
+G\left(x\right)\stackrel{\operatorname{def}}{=}\frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot \varphi_X\left(t\right)\ dt
+\end{equation*}
+In Quiz 4, it was shown that
+\begin{equation*}
+\varphi_X\left(t\right) \stackrel{\operatorname{def}}{=}\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right] 
+											  =\exp\left(-\frac{t^2}{2}\right) \hspace{12mm}  (1)
+\end{equation*}
+with $t\in\mathbbm{R}$.
+
+}
+
+\frame{
+\frametitle{Proof}
+Hence, we get
+\begin{equation*}
+\begin{align*}
+ G\left(x\right)&\stackrel{\operatorname{(1)}}{=}\frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{t^2}{2}\right)\  dt \\
+								&=\left[\frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{t^2}{2}\right)\  dt\right]\cdot \frac{\sqrt{2\pi}}{\sqrt{2\pi}} \\
+								&= \frac{\sqrt{2\pi}}{2\pi} \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\frac{1}{\sqrt{2\pi}}\cdot \exp\left(-\frac{t^2}{2}\right)\  dt \\
+\end{align*}
+\end{equation*}
+}
+
+\frame{
+\frametitle{Proof}
+Let $f_X$ be the probability density function of the Standard Normal Distribution. Then:
+\begin{equation*}
+\begin{align*}
+G\left(x\right)&= \frac{1}{\sqrt{2\pi}}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot f_X\left(t\right)\  dt \\
+									&= \frac{1}{\sqrt{2\pi}}\cdot \operatorname{E}\left[\exp\left(\mathbf{i}xX\right)\right] \\
+									&\stackrel{\operatorname{(1)}}{=} \frac{1}{\sqrt{2\pi}}\cdot\exp\left(-\frac{x^2}{2}\right)
+\end{align*}
+\end{equation*}
+Hence, $(\ast)$ was proved.
+}
+
+\end{document}
