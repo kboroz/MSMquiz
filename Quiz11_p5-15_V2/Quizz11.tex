@@ -1,0 +1,119 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{bbm}
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+\pgfdeclareimage[height=3.5cm]{logobig}{hucaselogo}
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+\title[Selected Topics of Mathematical Statistics]{Title}
+\authora{Björn Bokelmann}
+\authorb{}
+\authorc{}
+
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{http://case.hu-berlin.de}
+\def\linkc{}
+
+\institute{Ladislaus von Bortkiewicz Chair of Statistics \\
+C.A.S.E. -- Center for Applied Statistics\\
+and Economics\\
+Humboldt--Universität zu Berlin \\}
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Further Discussion of Convergence in Distribution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+\color{brown}
+Quiz 11
+\color{black}
+\\
+by Björn Bokelmann
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame{
+%Exercise
+\color{brown}
+Given that $X_{n}=AN(n,2n)$, why does $\frac{n-1}{n}X_{n}=AN(n,2n)$ hold and why is $\frac{n^{1/2}-1}{n^{1/2}}X_{n}\not\sim AN(n,2n)$? \newline
+
+\color{black}
+%First Part
+First we define $a_{n}=\frac{n-1}{n}$, $b_{n}=0$, $\mu_{n}=n$, $\sigma_{n}=\sqrt{2n}$. \\
+Then $X_{n}=AN(\mu_{n},\sigma_{n})$. Further it holds 
+\begin{align*}
+a_{n}=\frac{n-1}{n}=1+\frac{1}{n} \stackrel{n\rightarrow \infty}{\rightarrow} 1
+\end{align*}
+and 
+\begin{align*}
+\frac{\mu_{n}(a_{n}-1)+b_{n}}{\sigma_{n}}=\frac{n(\frac{n-1}{n}-1)}{\sqrt{2n}}=\frac{-1}{\sqrt{2n}}\stackrel{n\rightarrow \infty}{\rightarrow} 0 \ .
+\end{align*}
+After Lemma 23 $\frac{n-1}{n}X_{n}$ is $AN(\mu_{n},\sigma_{n}).$ 
+}
+
+\frame{
+%Exercise
+\color{brown}
+Given that $X_{n}=AN(n,2n)$, why does $\frac{n-1}{n}X_{n}=AN(n,2n)$ hold and why is $\frac{n^{1/2}-1}{n^{1/2}}X_{n}\not\sim AN(n,2n)$ ? \newline
+
+
+
+
+\color{black}
+%Second Part
+Again we define $a_{n}=\frac{n^{1/2}-1}{n^{1/2}}$, $b_{n}=0$, $\mu_{n}=n$, $\sigma_{n}=\sqrt{2n}$. \\ 
+Then it holds
+\begin{align*}
+\frac{\mu_{n}(a_{n}-1)+b_{n}}{\sigma_{n}}=\frac{n(\frac{n^{1/2}-1}{n^{1/2}}-1)}{\sqrt{2n}}=\frac{n-n^{1/2}-n}{\sqrt{2n}}=-\frac{1}{\sqrt{2}}\stackrel{n\rightarrow \infty}{\not\rightarrow}0
+\end{align*}
+Again after Lemma 23 we can conclude that $a_{n}X_{n}\not\sim AN(n,2n)$.
+}
+
+\frame{
+
+An example for a sequence $X_{n}\sim AN(n,2n)$ is \\
+$X_{n}=3 \underset{i=1}{\overset{n}{\sum}} Y_{n}$ with $Y_{n}\sim Ber(\frac{1}{3})$. 
+
+\begin{proof}
+Because $E[3Y_{i}]=3\cdot \frac{1}{3}=1$ and $Var[3Y_{i}]=9\cdot \frac{1}{3}(1-\frac{1}{3})=2$ it holds after the Central Limit Theorem 
+\begin{align*}
+\frac{\underset{i=1}{\overset{n}{\sum}} 3Y_{n}-n}{\sqrt{2n}}\stackrel{\mathcal{L}}{\rightarrow}N(0,1)
+\end{align*}
+Thus $X_{n}=\underset{i=1}{\overset{n}{\sum}} 3Y_{n}\sim AN(n,2n)$.
+\end{proof}
+
+}
+
+
+
+
+
+
+
+
+\end{document}
