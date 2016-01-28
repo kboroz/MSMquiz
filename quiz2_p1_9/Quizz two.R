@@ -12,7 +12,6 @@ r = rsnorm(n = 1e+05, xi = 2)
 png(filename = "Quiz two a.png", height = 300)
 hist(r, n = 100, probability = TRUE, border = "white", col = "red", main = "Right Skewed Dist.")
 box()
-dev.off()
 
 # Compute the density
 d = density(r)
@@ -28,7 +27,6 @@ hist(rr, n = 100, probability = TRUE, border = "white", col = "green",
      main = "Left Skewed Dist.")
 box()
 
-dev.off()
 # Compute the density
 dr = density(rr)
 lines(dr, lwd = 2)
