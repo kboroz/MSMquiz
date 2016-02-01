@@ -67,9 +67,19 @@ Humboldt--Universit\"at zu Berlin\\}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Solution to Quizzes}
+\frame[plain]{
+\vspace{-2cm}
+\LARGE
+\color{isered}
+\textbf{
+\begin{center}
+Quiz 11:\\
+If $X_n$ is $\operatorname{AN}(n, 2n)$, then so is $\frac{n-1}{n}X_n$, but NOT $\frac{n^{1/2}-1}{n^{1/2}}X_n$, why? and find a r.v. $ X_n$ s.t. $X_n \sim \operatorname{AN}(n, 2n)$}
+\end{center}
+}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frame{
-\frametitle{Quiz 11: If $X_n$ is $\operatorname{AN}(\mu_n, \sigma_{n}^2)$, then so is $\frac{n-1}{n}X_n$, but NOT $\frac{n^{1/2}-1}{n^{1/2}}X_n$, why? and find a $r.v. X_n s.t. X_n \sim \operatorname{AN}(n, 2n)$}
+\frametitle{Solution to Quiz 11} 
 Proof: \\
 According to Lemma 23, if $X_n$ is $\operatorname{AN}(n, 2n)$, then also $a_nX_n+b_n$ is 
 $\operatorname{AN}(n, 2n) \iff a_n \rightarrow 1, \frac{\mu_n(a_n-1)+b_n}{\sigma_n} \rightarrow 0$.
@@ -82,7 +92,7 @@ By Lemma 23, $\frac{n-1}{n}X_n$ is also $\operatorname{AN}(n, 2n)$.
 }
 
 \frame{
-\frametitle{Quiz 11: If $X_n$ is $\operatorname{AN}(\mu_n, \sigma_{n}^2)$, then so is $\frac{n-1}{n}X_n$, but NOT $\frac{n^{1/2}-1}{n^{1/2}}X_n$, why? and find a $r.v. X_n s.t. X_n \sim \operatorname{AN}(n, 2n)$}
+\frametitle{Solution to Quiz 11}
 Proof:\\
 \begin{itemize}
 \item For $\frac{n^{1/2}-1}{n^{1/2}}X_n$:\\
@@ -93,13 +103,18 @@ By Lemma 23, $\frac{n^{1/2}-1}{n^{1/2}}$ is not $\operatorname{AN}(n, 2n)$.
 }
 
 \frame{
-\frametitle{Quiz 11: If $X_n$ is $\operatorname{AN}(\mu_n, \sigma_{n}^2)$, then so is $\frac{n-1}{n}X_n$, but NOT $\frac{n^{1/2}-1}{n^{1/2}}X_n$, why? and find a $r.v. X_n s.t. X_n \sim \operatorname{AN}(n, 2n)$}
-An example $r.v. X_n$ satisfies $X_n \sim \operatorname{AN}(n, 2n)$
-\begin{center}
-\includegraphics[scale=0.25]{MSM_AN.png}
-\end{center}
-	\begin{center}	\href{https://github.com/xuxiu/MSMquiz/tree/master/Quiz11_p5-15}{\quantnet Quiz11-MSM.R}
-    \end{center}
+\frametitle{Solution to Quiz 11}
+Proof:\\
+\begin{itemize}
+\item For $\frac{n^{\alpha}-1}{n^{\alpha}}X_n$ to follow $\operatorname{AN}(n, 2n)$, it must satisfy the following two conditions:\\
+\begin{enumerate}
+\item $a_n=\frac{n^{\alpha}-1}{n^{\alpha}} \rightarrow 1$
+\item $\frac{n(\frac{n^{\alpha}-1}{n^{\alpha}}-1)+0}{\sqrt{2n}} \rightarrow 0$
+\end{enumerate}
+From 1, we have $\alpha > 0$;\\
+From 2, we have $\frac{-\sqrt{n}}{\sqrt{2}n^{\alpha}} \rightarrow 0$, thus $\alpha > 1/2$.\\
+Combining these 2 results, $\frac{n^{\alpha}-1}{n^{\alpha}}X_n$ follows $\operatorname{AN}(n, 2n)$ when $\alpha > 1/2$.
+\end{itemize} 
 }
 
 \end{document}

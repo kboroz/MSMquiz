@@ -29,7 +29,7 @@
 \pgfdeclareimage[height=4.5cm]{logobig}{LogoIRTG}
 % Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
 % right corner:
-%\pgfdeclareimage[height=0.7cm]{logosmall}{MSM_AN.png}
+\pgfdeclareimage[height=0.7cm]{logosmall}{MSM_AN.png}
 
 % Title page outline:
 % use this number to modify the scaling of the headline on title page
@@ -66,10 +66,21 @@ Humboldt--Universit\"at zu Berlin\\}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Solution to Quizzes}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frame[plain]{
+\vspace{-2cm}
+\LARGE
+\color{isered}
+\textbf{
+\begin{center}
+Quiz 13:\\
+Derive the above m.f. for $X \sim \operatorname{N}(\mu,{\sigma}^2)$ and $X \sim \operatorname{B}(1,p)$}
+\end{center}
+}
+
 \frame{
-\frametitle{Quiz 13 - Derive the above m.f. for $X \sim \operatorname{N}(\mu,{\sigma}^2)$ and $X \sim \operatorname{B}(1,p)$}
+\frametitle{Solution to Quiz 13}
 \begin{itemize}
 \item For continuous $r.v. X \in \mathbbm{R}$, moment generating function is $M_X(t)=\operatorname{E}[e^{tX}]=\int_{-\infty}^{\infty}e^{tx}f(x)dx$:\\
 Therefore for $X \sim \operatorname{N}(\mu,{\sigma}^2)$, we have \\
@@ -77,13 +88,13 @@ Therefore for $X \sim \operatorname{N}(\mu,{\sigma}^2)$, we have \\
 M_X(t)=\operatorname{E}[e^{tX}]
 &=&\int_{-\infty}^{\infty}e^{tx}\cdot \frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{(x-\mu)^2}{2 {\sigma}^2}}dx\\
 &=&\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi} \sigma}e^{-\frac{[x-(\mu+ t{\sigma}^2)]^2}{2\sigma^2}}\cdot e^{(t\mu +t^2{\sigma}^2/2)}dx\\
-&=&1\cdot exp(t\mu+ t^2\sigma^2/2)=exp(t\mu+ t^2{\sigma}^2/2)
+&=&1\cdot \exp(t\mu+ t^2\sigma^2/2)=\exp(t\mu+ t^2{\sigma}^2/2)
 \end{eqnarray*}
 \end{itemize}
 }
 
 \frame{
-\frametitle{Quiz 13 - Derive the above m.f. for $X \sim \operatorname{N}(\mu,{\sigma}^2)$ and $X \sim \operatorname{B}(1,p)$}
+\frametitle{Solution to Quiz 13}
 \begin{itemize}
 \item For discrete $r.v. X \in \mathbbm{Z}$, moment generating function is $M_X(t)=\sum_i {e^{tx_i}\cdot p_i}$\\
 Therefore for $X \sim \operatorname{B}(1,p)$, we have \\
