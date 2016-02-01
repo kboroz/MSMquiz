@@ -25,7 +25,7 @@ bden = bkde((colMeans(bsamplem) - p)/sqrt(p * (1 - p)/n))
 
 # Proceed to plot the three distributions
 plot(bden, col = "blue3", type = "l", lty = 1, lwd = 1, xlab = "", ylab = "Density", 
-     main = "Binomial approximation to Normal Distribution", cex.lab = 1, 
+     main = "Cauchy, Normal and Binomial distributions bahavior", cex.lab = 1, 
      cex.axis = 1, ylim = c(0, 0.45))
 
 plot(dnorm, -4, 4, n = 1000, col = "Green", add = TRUE)
