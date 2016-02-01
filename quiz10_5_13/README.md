@@ -18,7 +18,7 @@ Submitted : Tue, December 02 2015 by Luis Alejandro Sarmiento Abogado
 
 Datafile : Null
 ```
-![Q_image](https://cloud.githubusercontent.com/assets/15620386/11482450/2322e7f6-97a3-11e5-823d-5ae1f169c737.png)
+![Q_image](https://github.com/xuxiu/MSMquiz/blob/master/quiz10_5_13/Quiz%2010.png?raw=true)
 
 ```r
 
