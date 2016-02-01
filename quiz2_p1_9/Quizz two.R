@@ -5,33 +5,29 @@ rm(list = ls())
 # Load Packages
 library(fGarch)
 
-# Right Skewed
+# Right skewed generation of random numbers.
 r = rsnorm(n = 1e+05, xi = 2)
 
 # Plot the distribution
-png(filename = "Quiz two a.png", height = 300)
-hist(r, n = 100, probability = TRUE, border = "white", col = "red", main = "Right Skewed Dist.")
+hist(r, n = 100, probability = TRUE, xlab = "", border = "white", col = "red", 
+     main = "Right Skewed Distribution")
 box()
 
 # Compute the density
 d = density(r)
 lines(d, lwd = 2, col = "blue")
-dev.off()
 
-# Left Skewed distribution 
+# Left Skewed generation of random numbers
 rr = rsnorm(n = 1e+05, xi = -2)
 
 # Plot the given distribution and correspondent Histogram
-png(filename = "Quiz two b.png", height = 300)
 hist(rr, n = 100, probability = TRUE, border = "white", col = "green", 
-     main = "Left Skewed Dist.")
-box()
+     main = "Left Skewed Distribution", xlab = "")
 
 # Compute the density
 dr = density(rr)
 lines(dr, lwd = 2)
 
-dev.off()
 
 
 
