@@ -21,7 +21,7 @@
 
 # Datafile : Null
 ```
-![Q_image](https://cloud.githubusercontent.com/assets/15620386/11501374/e1df06d0-9833-11e5-95ff-c315ddf32885.png)
+![Q_image](https://github.com/xuxiu/MSMquiz/blob/master/quiz9a_5_11/Quiz%209a.png?raw=true)
 
 ```r
 # Clear graphics and data
