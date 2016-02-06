@@ -75,7 +75,7 @@ Humboldt--Universit\"at zu Berlin \\}
 
 \begin{Large}\noindent \textbf{Prove the following property of the characteristic function for the Standard Normal Distribution for $k=1,2,3,4$:}
 \begin{equation*}
-\varphi^{(k)}_{X}(t)|_{t=0}=i^{k}\cdot \mathbb{E}[X^k]
+\varphi^{\left(k\right)}_{X}\left(t\right) |_{t=0}=\mathbf{i}^{k}\cdot \operatorname{E}\left[X^k\right]
 \end{equation*}
 \end{Large}
 
@@ -86,10 +86,10 @@ Humboldt--Universit\"at zu Berlin \\}
 \frame{
 \frametitle{Characteristic Function of Standard Normal Distribution}
 
-In Quiz 4 it was shown that the characteristic function for a random variable $X\sim N(0,1)$ is of the following form:
+In Quiz 4 it was shown that the characteristic function for a random variable $X\sim \operatorname{N}(0,1)$ is of the following form:
 
 \begin{equation*}
-\varphi_X(t)=e^{-\frac{1}{2}t^2},\ \hspace{3mm}t\in\mathbb{R}
+\varphi_X\left(t\right)=\exp\left(-\frac{t^2}{2}\right),\ \hspace{3mm}t\in\mathbbm{R}
 \end{equation*}
 
 }
@@ -99,17 +99,17 @@ In Quiz 4 it was shown that the characteristic function for a random variable $X
 \section{Proof: k=1}
 
 \frame{
-\frametitle{k=1}
+\frametitle{Proof for k=1}
 
 \begin{equation*}
 \begin{align*}
-\varphi^{(1)}_{X}(t)\ |_{t=0}	&=\frac{d}{dt}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=[-t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+\varphi^{\left(1\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d}{dt} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\left.\left\{-t\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=0 \\
-														&=i^1\cdot \mathbb{E}[X]
+														&=\mathbf{i}^1\cdot \operatorname{E}\left[X\right]
 \end{align*}
 \end{equation*} \\ \vspace{3mm}
-because $\mathbb{E}[X]=0$ for the Standard Normal Distribution.
+because $\operatorname{E}\left[X\right]=0$ for the Standard Normal Distribution.
 
 }
 
@@ -118,19 +118,19 @@ because $\mathbb{E}[X]=0$ for the Standard Normal Distribution.
 \section{Proof: k=2}
 
 \frame{
-\frametitle{k=2}
+\frametitle{Proof for k=2}
 
 \begin{equation*}
 \begin{align*}
-\varphi^{(2)}_{X}(t)\ |_{t=0}	&=\frac{d^2}{dt^2}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=\frac{d}{dt}\ [-t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=[-e^{-\frac{t^2}{2}} + t^2\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+\varphi^{\left(2\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d^2}{dt^2} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\frac{d}{dt} \left.\left\{-t\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\left.\left\{-\exp\left(-\frac{t^2}{2}\right) + t^2\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=-1 \\
-														&=i^2\cdot Var(X) \\
-														&=i^2\cdot \mathbb{E}[X^2]
+														&=\mathbf{i}^2\cdot \operatorname{Var}\left(X\right) 
+														=\mathbf{i}^2\cdot \operatorname{E}\left[X^2\right]
 \end{align*}
 \end{equation*} \\ \vspace{3mm}
-because $Var(X)=1$ and $\mathbb{E}[X]=0$ for the Standard Normal Distribution.
+because $\operatorname{Var}\left(X\right)=1$ and $\operatorname{E}\left[X\right]=0$ for the Standard Normal Distribution.
 
 }
 
@@ -139,20 +139,19 @@ because $Var(X)=1$ and $\mathbb{E}[X]=0$ for the Standard Normal Distribution.
 \section{Proof: k=3}
 
 \frame{
-\frametitle{k=3}
+\frametitle{Proof for k=3}
 
 \begin{equation*}
 \begin{align*}
-\varphi^{(3)}_{X}(t)\ |_{t=0}	&=\frac{d^3}{dt^3}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=\frac{d}{dt}\ [-e^{-\frac{t^2}{2}} + t^2\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=\frac{d}{dt}\ [-e^{-\frac{t^2}{2}}]\ |_{t=0} + \frac{d}{dt}\ [t^2\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=[t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} + [2t\cdot e^{-\frac{t^2}{2}} - t^3\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+\varphi^{\left(3\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d^3}{dt^3} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\frac{d}{dt} \left.\left\{-\exp\left(-\frac{t^2}{2}\right) + t^2\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\left.\left\{t\exp\left(-\frac{t^2}{2}\right) + 2t\exp\left(-\frac{t^2}{2}\right) - t^3\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=0 \\
-														&=i^3\cdot \mathbb{E}[X^3]
+														&=\mathbf{i}^3\cdot \operatorname{E}\left[X^3\right]
 \end{align*}
 \end{equation*}\\
 \\
-because $\mathbb{E}[X^3]=0$ for the Standard Normal Distribution.
+because $\operatorname{E}\left[X^3\right]=0$ for the Standard Normal Distribution.
 
 }
 
@@ -161,51 +160,64 @@ because $\mathbb{E}[X^3]=0$ for the Standard Normal Distribution.
 \section{Proof: k=4}
 
 \frame{
-\frametitle{k=4}
+\frametitle{Proof for k=4}
 
 \begin{equation*}
 \begin{align*}
-\varphi^{(4)}_{X}(t)\ |_{t=0}	&=\frac{d^4}{dt^4}\ [e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=\frac{d}{dt}\ [t\cdot e^{-\frac{t^2}{2}} + 2t\cdot e^{-\frac{t^2}{2}} - t^3\cdot e^{-\frac{t^2}{2}}]\ |_{t=0} \\
-														&=\frac{d}{dt}\ [t e^{-\frac{t^2}{2}}]\ |_{t=0} + \frac{d}{dt}\ [2t e^{-\frac{t^2}{2}}]\ |_{t=0} - \frac{d}{dt}\ [t^3 e^{-\frac{t^2}{2}}]\ |_{t=0} \\
+\varphi^{\left(4\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d^4}{dt^4} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\frac{d}{dt} \bigg\{t \exp\left(-\frac{t^2}{2}\right) + 2t\exp\left(-\frac{t^2}{2}\right) \\
+														&\qquad \left.- t^3 \exp\left(-\frac{t^2}{2}\right)\bigg\}\right|_{t=0} \\
+														&=\frac{d}{dt} \left.\left\{t \exp\left(-\frac{t^2}{2}right)\right\}\right|_{t=0} + \frac{d}{dt} \left.\left\{2t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&\qquad - \frac{d}{dt} \left.\left\{t^3 \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}
 \end{align*}
 \end{equation*}
 
-% 													%	&=
-
 }
 
 \frame{
-\frametitle{k=4}
+\frametitle{Proof for k=4}
 
 It holds:
 \begin{equation}
-\frac{d}{dt}\ [t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0}&=[e^{-\frac{t^2}{2}} - t^2\cdot e^{-\frac{t^2}{2}}]|_{t=0} = 1
+\begin{align}
+\frac{d}{dt} \left.\left\{t\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}&=\left.\left\{\exp\left(-\frac{t^2}{2}\right) - t^2\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+&= 1
+\end{align}
 \end{equation}
 
 \begin{equation}
-\frac{d}{dt}\ [2t\cdot e^{-\frac{t^2}{2}}]\ |_{t=0}&=2\cdot [e^{-\frac{t^2}{2}} - t^2\cdot e^{-\frac{t^2}{2}}]|_{t=0} = 2
+\begin{align}
+\frac{d}{dt} \left.\left\{2t\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}&=2\left.\left\{\exp\left(-\frac{t^2}{2}\right) - t^2 \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+&= 2
+\end{align}
 \end{equation}
+}
+
+\frame{
+\frametitle{Proof for k=4}
 
 \begin{equation}
-\frac{d}{dt}\ [t^3\cdot e^{-\frac{t^2}{2}}]\ |_{t=0}&=[3\cdot t^2\cdot e^{-\frac{t^2}{2}} - t^4\cdot e^{-\frac{t^2}{2}}]|_{t=0} = 0
+\begin{align}
+\frac{d}{dt} \left.\left\{t^3\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}&=\left.\left\{3 t^2\exp\left(-\frac{t^2}{2}\right) - t^4\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+&= 0
+\end{align}
 \end{equation}
 
 }
 
 \frame{
-\frametitle{k=4}
+\frametitle{Proof for k=4}
 
 With (1), (2), (3) it follows:
 
 \begin{equation*}
 \begin{align*}
-\varphi^{(4)}_{X}(t)\ |_{t=0}	&=1+2-0 \\
+\varphi^{\left(4\right)}_{X}\left(t\right) |_{t=0}	&=1+2-0 \\
 															&=3\\
-															&=i^4\cdot \mathbb{E}[X^4]
+															&=\mathbf{i}^4\cdot \operatorname{E}\left[X^4\right]
 \end{align*}
 \end{equation*}
-because $i^4=i^2\cdot i^2=(-1)\cdot(-1)=1$ and $\mathbb{E}[X^4]=3$ for the Standard Normal Distribution.
+because $\mathbf{i}^4=\mathbf{i}^2\cdot \mathbf{i}^2=(-1)\cdot(-1)=1$ and $\operatorname{E}\left[X^4\right]=3$ for the Standard Normal Distribution.
 
 }
 
