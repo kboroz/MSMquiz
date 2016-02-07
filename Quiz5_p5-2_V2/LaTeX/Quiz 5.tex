@@ -32,7 +32,7 @@
 \pgfdeclareimage[height=2cm]{logobig}{hulogo}
 % Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
 % right corner:
-\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+\pgfdeclareimage[height=0.9cm]{logosmall}{Figures/msm}
 
 % Title page outline:
 % use this number to modify the scaling of the headline on title page
@@ -84,7 +84,7 @@ f\left(x\right)=\frac{1}{2\pi}\cdot\int_{-\infty}^{\infty} \exp\left(-\mathbf{i}
 
 \frame{
 \frametitle{Proof}
-Let $X\sim N(0,1)$. Define
+Let $X\sim \operatorname{N}\left(0,1\right)$. Define
 \begin{equation*}
 G\left(x\right)\stackrel{\operatorname{def}}{=}\frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot \varphi_X\left(t\right)\ dt
 \end{equation*}
@@ -104,7 +104,7 @@ Hence, we get
 \begin{align*}
  G\left(x\right)&\stackrel{\operatorname{(1)}}{=}\frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{t^2}{2}\right)\  dt \\
 								&=\left\{\frac{1}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{t^2}{2}\right)\  dt\right\}\cdot \frac{\sqrt{2\pi}}{\sqrt{2\pi}} \\
-								&= \frac{\sqrt{2\pi}}{2\pi} \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\frac{1}{\sqrt{2\pi}}\cdot \exp\left(-\frac{t^2}{2}\right)\  dt \\
+								&= \frac{\sqrt{2\pi}}{2\pi}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot\frac{1}{\sqrt{2\pi}}\cdot \exp\left(-\frac{t^2}{2}\right)\  dt \\
 \end{align*}
 \end{equation*}
 }
@@ -115,7 +115,7 @@ Let $f_X$ be the probability density function of the Standard Normal Distributio
 \begin{equation*}
 \begin{align*}
 G\left(x\right)&= \frac{1}{\sqrt{2\pi}}\cdot \int_{-\infty}^{\infty} \exp\left(-\mathbf{i}tx\right)\cdot f_X\left(t\right)\  dt \\
-									&= \frac{1}{\sqrt{2\pi}}\cdot \operatorname{E}\left[\exp\left(\mathbf{i}xX\right)\right] \\
+									&= \frac{1}{\sqrt{2\pi}}\cdot \operatorname{E}\left[\exp\left(-\mathbf{i}xX\right)\right] \\
 									&\stackrel{\operatorname{(1)}}{=} \frac{1}{\sqrt{2\pi}}\cdot\exp\left(-\frac{x^2}{2}\right)
 \end{align*}
 \end{equation*}

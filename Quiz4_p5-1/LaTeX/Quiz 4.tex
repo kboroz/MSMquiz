@@ -32,7 +32,7 @@
 \pgfdeclareimage[height=2cm]{logobig}{hulogo}
 % Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
 % right corner:
-\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+\pgfdeclareimage[height=0.9cm]{logosmall}{Figures/msm}
 
 % Title page outline:
 % use this number to modify the scaling of the headline on title page
@@ -81,7 +81,7 @@ Humboldt--Universit\"at zu Berlin \\}
 
 \frame{
 \frametitle{Binomial Distribution}
-Let $X\sim \operatorname{B}(n,p)$. Then:
+Let $X\sim \operatorname{B}\left(n,p\right)$. Then:
 \begin{equation*}
 \begin{align*}
 \varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\sum_{k=0}^n \exp\left(\mathbf{i}tk\right)\cdot \operatorname{P}\left(X=k\right) \\
@@ -100,7 +100,7 @@ because $\left(a+b\right)^n=\sum_{k=0}^n \binom{n}{k}\cdot a^k\cdot b^{n-k}$ for
 
 \frame{
 \frametitle{Poisson Distribution}
-Let $X\sim \operatorname{Pois}(\lambda)$. Then:
+Let $X\sim \operatorname{Pois}\left(\lambda\right)$. Then:
 \begin{equation*}
 \begin{align*}
 \varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\sum_{k=0}^{\infty} \exp\left(\mathbf{i}tk\right) \cdot \operatorname{P}\left(X=k\right) \\
@@ -118,7 +118,7 @@ because $\exp\left(x\right) = \sum_{k=0}^\infty \frac{x^k}{k!}$ for $x\in \mathb
 
 \frame{
 \frametitle{Exponential Distribution}
-Let $X\sim \operatorname{Exp}(\lambda)$. Then:
+Let $X\sim \operatorname{Exp}\left(\lambda\right)$. Then:
 \begin{equation*}
 \begin{align*}
 \varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right] \\
@@ -169,13 +169,13 @@ because $\lim_{a\rightarrow\infty} \exp\left(-\lambda a\right)=0$ and $|\exp\lef
 
 \frame{
 \frametitle{Standard Normal Distribution}
-Let $X\sim \operatorname{N}(0,1)$. Then:
+Let $X\sim \operatorname{N}\left(0,1\right)$. Then:
 \begin{equation*}
 \begin{align*}
-\varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\int_{-\infty}^\infty \exp\left(\mathbf{i}tx\right) \cdot \frac{1}{\sqrt{2\pi}} \exp\left(-\frac{x^2}{2}\right)\ dx \\
-						&= \frac{1}{\sqrt{2\pi}}\ \bigg\{\int_{-\infty}^0 \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\ 
+\varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\int_{-\infty}^\infty \exp\left(\mathbf{i}tx\right) \cdot \frac{1}{\sqrt{2\pi}}\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\
+						&= \frac{1}{\sqrt{2\pi}}\cdot \bigg\{\int_{-\infty}^0 \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\ 
 						&\qquad +\ \int_0^\infty \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx\ \bigg\} \\
-						&=\frac{1}{\sqrt{2\pi}}\ \bigg\{\int_0^\infty \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\
+						&=\frac{1}{\sqrt{2\pi}}\cdot \bigg\{\int_0^\infty \exp\left(-\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx \\
 						&\qquad + \int_0^\infty \exp\left(\mathbf{i}tx\right)\cdot \exp\left(-\frac{x^2}{2}\right)\ dx\ \bigg\}
 \end{align*}
 \end{equation*}
@@ -218,17 +218,17 @@ we get $c=1$. Hence, $\varphi_X\left(t\right)=F\left(t\right)=\exp\left(-\frac{t
 
 \frame{
 \frametitle{Standard Normal Distribution}
-
+Proof of $(\ast)$:
 \begin{equation*}
 \begin{align*}
 F'\left(t\right)&=\frac{d}{dt}\ \left\{ \frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \operatorname{cos}\left(tx\right)\  dx \right\}\\
-&=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \frac{d}{dt} \left\{ \operatorname{cos}\left(tx\right) \right\}\ dx \\
+&=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty \exp\left(-\frac{x^2}{2}\right)\cdot \frac{d}{dt} \operatorname{cos}\left(tx\right)\ dx \\
 &=\frac{2}{\sqrt{2\pi}}\cdot \int_0^\infty -\exp\left(-\frac{x^2}{2}\right)\cdot x\cdot \operatorname{sin}\left(tx\right)\ dx
 \end{align*}
 \end{equation*}
 
 Integration by parts: \\ 
-$u\left(x\right)=\exp\left(-\frac{x^2}{2}\right)$ \hspace{7mm} $u'\left(x\right)=-x\cdot \exp\left(-\frac{x^2}{2}\right)$ \\ 
+$u\left(x\right)=\exp\left(-\frac{x^2}{2}\right)$ \hspace{8mm} $u'\left(x\right)=-x\cdot \exp\left(-\frac{x^2}{2}\right)$ \\ 
 $v\left(x\right)=\operatorname{sin}\left(tx\right)$ \hspace{14mm} $v'\left(x\right)=t\cdot \operatorname{cos}\left(tx\right)$
 
 }

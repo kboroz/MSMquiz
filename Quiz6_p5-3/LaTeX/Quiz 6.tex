@@ -32,7 +32,7 @@
 \pgfdeclareimage[height=2cm]{logobig}{hulogo}
 % Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
 % right corner:
-\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+\pgfdeclareimage[height=0.9cm]{logosmall}{Figures/msm}
 
 % Title page outline:
 % use this number to modify the scaling of the headline on title page
@@ -84,9 +84,9 @@ Humboldt--Universit\"at zu Berlin \\}
 \section{Proof}
 
 \frame{
-\frametitle{Characteristic Function of Standard Normal Distribution}
+\frametitle{Characteristic Function of the Standard Normal Distribution}
 
-In Quiz 4 it was shown that the characteristic function for a random variable $X\sim \operatorname{N}(0,1)$ is of the following form:
+In Quiz 4 it was shown that the characteristic function of a standard normal random variable is of the following form:
 
 \begin{equation*}
 \varphi_X\left(t\right)=\exp\left(-\frac{t^2}{2}\right),\ \hspace{3mm}t\in\mathbbm{R}
@@ -104,9 +104,9 @@ In Quiz 4 it was shown that the characteristic function for a random variable $X
 \begin{equation*}
 \begin{align*}
 \varphi^{\left(1\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d}{dt} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
-														&=\left.\left\{-t\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\left.\left\{-t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=0 \\
-														&=\mathbf{i}^1\cdot \operatorname{E}\left[X\right]
+														&=\mathbf{i}\cdot \operatorname{E}\left[X\right]
 \end{align*}
 \end{equation*} \\ \vspace{3mm}
 because $\operatorname{E}\left[X\right]=0$ for the Standard Normal Distribution.
@@ -123,8 +123,8 @@ because $\operatorname{E}\left[X\right]=0$ for the Standard Normal Distribution.
 \begin{equation*}
 \begin{align*}
 \varphi^{\left(2\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d^2}{dt^2} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
-														&=\frac{d}{dt} \left.\left\{-t\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
-														&=\left.\left\{-\exp\left(-\frac{t^2}{2}\right) + t^2\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\frac{d}{dt} \left.\left\{-t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\left.\left\{-\exp\left(-\frac{t^2}{2}\right) + t^2 \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=-1 \\
 														&=\mathbf{i}^2\cdot \operatorname{Var}\left(X\right) 
 														=\mathbf{i}^2\cdot \operatorname{E}\left[X^2\right]
@@ -144,7 +144,7 @@ because $\operatorname{Var}\left(X\right)=1$ and $\operatorname{E}\left[X\right]
 \begin{equation*}
 \begin{align*}
 \varphi^{\left(3\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d^3}{dt^3} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
-														&=\frac{d}{dt} \left.\left\{-\exp\left(-\frac{t^2}{2}\right) + t^2\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\frac{d}{dt} \left.\left\{-\exp\left(-\frac{t^2}{2}\right) + t^2 \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=\left.\left\{t\exp\left(-\frac{t^2}{2}\right) + 2t\exp\left(-\frac{t^2}{2}\right) - t^3\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=0 \\
 														&=\mathbf{i}^3\cdot \operatorname{E}\left[X^3\right]
@@ -167,7 +167,7 @@ because $\operatorname{E}\left[X^3\right]=0$ for the Standard Normal Distributio
 \varphi^{\left(4\right)}_{X}\left(t\right) |_{t=0}	&=\frac{d^4}{dt^4} \left.\left\{\exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&=\frac{d}{dt} \bigg\{t \exp\left(-\frac{t^2}{2}\right) + 2t\exp\left(-\frac{t^2}{2}\right) \\
 														&\qquad \left.- t^3 \exp\left(-\frac{t^2}{2}\right)\bigg\}\right|_{t=0} \\
-														&=\frac{d}{dt} \left.\left\{t \exp\left(-\frac{t^2}{2}right)\right\}\right|_{t=0} + \frac{d}{dt} \left.\left\{2t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+														&=\frac{d}{dt} \left.\left\{t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} + \frac{d}{dt} \left.\left\{2t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 														&\qquad - \frac{d}{dt} \left.\left\{t^3 \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}
 \end{align*}
 \end{equation*}
@@ -180,7 +180,7 @@ because $\operatorname{E}\left[X^3\right]=0$ for the Standard Normal Distributio
 It holds:
 \begin{equation}
 \begin{align}
-\frac{d}{dt} \left.\left\{t\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}&=\left.\left\{\exp\left(-\frac{t^2}{2}\right) - t^2\cdot \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
+\frac{d}{dt} \left.\left\{t \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0}&=\left.\left\{\exp\left(-\frac{t^2}{2}\right) - t^2 \exp\left(-\frac{t^2}{2}\right)\right\}\right|_{t=0} \\
 &= 1
 \end{align}
 \end{equation}
@@ -202,11 +202,6 @@ It holds:
 &= 0
 \end{align}
 \end{equation}
-
-}
-
-\frame{
-\frametitle{Proof for k=4}
 
 With (1), (2), (3) it follows:
 
