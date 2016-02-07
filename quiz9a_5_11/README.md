@@ -29,7 +29,10 @@ graphics.off()
 rm(list = ls())
 
 # Generate a set of random variables following a normal distribution.
-random = rnorm(n = 1e+05, mean = 2, sd = 0.5)
+m = 2
+s = 0.5
+
+random = rnorm(n = 1e+05, mean = m, sd = s)
 
 # Determine their correspondent mean, standard deviation and variance.
 mu  = mean(random)
@@ -53,7 +56,7 @@ var(X)
 # distributed
 
 # Plot initial distribution
-plot(density(random), col = "red", xlim = c(-3, 4), ylim = c(0, 1), lwd = 2, 
+plot(density(random), col = "red", xlim = c(-m*2, m*2), ylim = c(0, 1), lwd = 2, 
      main = "Densities comparison", xlab = "")
 
 # Plot Transformation
