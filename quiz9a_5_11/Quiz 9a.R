@@ -36,4 +36,4 @@ lines(density(X), col = "blue", lwd = 2)
 # Set the legend to differentiate
 legend("topleft", legend = c("Standard Normal Distribution", "Initial Distribution"), 
        lty = 1, col = c("blue", "red"), cex = 0.9)
-dev.off()
+
