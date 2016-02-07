@@ -31,7 +31,7 @@ rm(list = ls())
 # Generate a set of random variables following a normal distribution.
 random = rnorm(n = 1e+05, mean = 2, sd = 0.5)
 
-# Determine their correspondent mean, standard deviation adn variance.
+# Determine their correspondent mean, standard deviation and variance.
 mu  = mean(random)
 sd  = sd(random)
 var = var(random)
