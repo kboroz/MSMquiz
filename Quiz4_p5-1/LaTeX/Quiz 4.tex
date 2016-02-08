@@ -106,7 +106,7 @@ Let $X\sim \operatorname{Pois}\left(\lambda\right)$. Then:
 \varphi_X\left(t\right)&=\operatorname{E}\left[\exp\left(\mathbf{i}tX\right)\right]=\sum_{k=0}^{\infty} \exp\left(\mathbf{i}tk\right) \cdot \operatorname{P}\left(X=k\right) \\
 						&=\sum_{k=0}^{\infty} \exp\left(\mathbf{i}tk\right) \cdot \exp\left(-\lambda\right) \cdot \frac{\lambda^k}{k!} \\
 						&= \exp\left(-\lambda\right)\cdot \sum_{k=0}^{\infty} \frac{\left\{\lambda\cdot \exp\left(\mathbf{i}t\right)\right\}^k}{k!} \\
-						&= \exp\left(-\lambda\right)\cdot \exp\left(\lambda\cdot \exp\left(\mathbf{i}t\right)\right)= \exp\left(\lambda \cdot \left[\exp\left(\mathbf{i}t\right)-1\right]\right)
+						&= \exp\left(-\lambda\right)\cdot \exp\left(\lambda\cdot \exp\left(\mathbf{i}t\right)\right)= \exp\left(\lambda \cdot \left(\exp\left(\mathbf{i}t\right)-1\right)\right)
 \end{align*}
 \end{equation*}
 because $\exp\left(x\right) = \sum_{k=0}^\infty \frac{x^k}{k!}$ for $x\in \mathbbm{R}$.
@@ -125,7 +125,7 @@ Let $X\sim \operatorname{Exp}\left(\lambda\right)$. Then:
 						&=\int_0^\infty \exp\left(\mathbf{i}tx\right) \cdot f(x)\ dx \\
 						&=\int_0^\infty \exp\left(\mathbf{i}tx\right) \cdot \lambda\cdot \exp\left(-\lambda x\right)\ dx \\
 						&=\lambda\cdot\int_0^\infty \exp\left(\mathbf{i}tx-\lambda x\right)\  dx \\
-						&=\lambda\cdot\int_0^\infty \exp\left(\left[\mathbf{i}t-\lambda\right]\cdot x\right)\  dx \\
+						&=\lambda\cdot\int_0^\infty \exp\left(\left(\mathbf{i}t-\lambda\right)\cdot x\right)\  dx \\
 \end{align*}
 \end{equation*}
 
@@ -136,10 +136,10 @@ Let $X\sim \operatorname{Exp}\left(\lambda\right)$. Then:
 
 \begin{equation*}
 \begin{align*}
-\varphi_X\left(t\right)&=\lambda\cdot\int_0^\infty \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot x\right)\  dx \\
-						&=\lambda\cdot\left\{\left.-\frac{1}{\lambda-\mathbf{i}t}\cdot \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot x \right)\right\}\right|_0^\infty \\
-						&=-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left\{ \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot \infty\right) - \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot 0\right)\right\} \\
-						&=-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left\{\lim_{a\rightarrow \infty} \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot a\right) - 1\right\} \\
+\varphi_X\left(t\right)&=\lambda\cdot\int_0^\infty \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot x\right)\  dx \\
+						&=\lambda\cdot\left\{\left.-\frac{1}{\lambda-\mathbf{i}t}\cdot \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot x \right)\right\}\right|_0^\infty \\
+						&=-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left\{ \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot \infty\right) - \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot 0\right)\right\} \\
+						&=-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left\{\lim_{a\rightarrow \infty} \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot a\right) - 1\right\} \\
 						&\overset{\text{(1)}}{=}-\frac{\lambda}{\lambda-\mathbf{i}t}\cdot \left(0-1\right)=\frac{\lambda}{\lambda-\mathbf{i}t}
 \end{align*}
 \end{equation*}
@@ -150,12 +150,12 @@ Let $X\sim \operatorname{Exp}\left(\lambda\right)$. Then:
 \frametitle{Exponential Distribution}
 To show (1), we prove that 
 \begin{equation*}
-\lim_{a\rightarrow \infty} \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot a\right) = 0 \eqno  (\ast)
+\lim_{a\rightarrow \infty} \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot a\right) = 0 \eqno  (\ast)
 \end{equation*}
 It holds:
 \begin{equation*}
 \begin{align*}
-\lim_{a\rightarrow\infty} \exp\left(-\left[\lambda-\mathbf{i}t\right]\cdot a\right) &= \lim_{a\rightarrow\infty} \exp\left(-\lambda a + \mathbf{i}t a\right) \\
+\lim_{a\rightarrow\infty} \exp\left(-\left(\lambda-\mathbf{i}t\right)\cdot a\right) &= \lim_{a\rightarrow\infty} \exp\left(-\lambda a + \mathbf{i}t a\right) \\
 &= \lim_{a\rightarrow\infty} \exp\left(-\lambda a\right)\cdot \exp\left(\mathbf{i}t a\right) \\
 &= 0
 \end{align*}
