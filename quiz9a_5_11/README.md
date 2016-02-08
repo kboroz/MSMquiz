@@ -8,9 +8,9 @@
 
 # Published in : MSMLLN
 
-# Description : transformation of a random variable with a given mean
+# Description : Transformation of a random variable with a given mean
 # and variance to an Asymptotic normal distribution with mean zero and
-# variance 1.
+# variance one.
 
 # Keywords : 'Asymptotic Normal Distribution, Graphical Representation,
 # Random Variables, pdf'
