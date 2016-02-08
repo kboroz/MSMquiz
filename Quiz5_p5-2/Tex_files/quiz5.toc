@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Problem Description}{2}{0}{1}
+\beamer@sectionintoc {2}{Lemma 1}{2}{0}{2}
+\beamer@sectionintoc {3}{Proof of Statement (18)}{5}{0}{3}

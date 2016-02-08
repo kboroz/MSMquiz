@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Problem Description}{2}{0}{1}
+\beamer@sectionintoc {2}{Uniform Distribution}{2}{0}{2}
+\beamer@sectionintoc {3}{Exponential Distribution}{4}{0}{3}
+\beamer@sectionintoc {4}{Normal Distribution}{5}{0}{4}
+\beamer@sectionintoc {5}{Visual illustration}{3}{0}{5}

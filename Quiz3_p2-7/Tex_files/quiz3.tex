@@ -1,0 +1,224 @@
+% Type of the document
+\documentclass{beamer}
+
+% elementary packages:
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{dsfont}
+% additional packages
+\usepackage{bbm}
+
+% packages supplied with ise-beamer:
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+% Change the pictures here:
+% logobig and logosmall are the internal names for the pictures: do not modify them. 
+% Pictures must be supplied as JPEG, PNG or, to be preferred, PDF
+\pgfdeclareimage[height=2cm]{logobig}{hulogo}
+% Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
+% right corner:
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+% Title page outline:
+% use this number to modify the scaling of the headline on title page
+\renewcommand{\titlescale}{1.0}
+% the title page has two columns, the following two values determine the percentage each one should get
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+% Define the title.Don't forget to insert an abbreviation instead 
+% of "title for footer". It will appear in the lower left corner:
+\title[Quiz 3]{Selected topics in Mathematical Statistics, Quiz 3}
+% Define the authors:
+\authora{Malte Esders} % a-c
+\authorb{}
+\authorc{}
+
+% Define any internet addresses, if you want to display them on the title page:
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{}
+\def\linkc{}
+% Define the institute:
+\institute{Humboldt--Universität zu Berlin \\}
+
+% Comment the following command, if you don't want, that the pdf file starts in full screen mode:
+%\hypersetup{pdfpagemode=FullScreen}
+
+%Start of the document
+\begin{document}
+
+% create the title slide, layout controlled in beamerdefs.sty and the foregoing specifications
+\frame[plain]{
+\titlepage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problem Description}
+
+\frame{
+\frametitle{Problem Description}
+Quiz 3: Show that the Kullback-Leibler-Divergence $K(\theta,\theta')$ satisfies for any $\theta$, $\theta'$:
+\begin{align} 
+\begin{split}
+	&1.\ K(\theta,\theta')|_{\theta=\theta'} = 0 \\
+	&2.\ \frac{d}{d\theta'}\ K(\theta,\theta')|_{\theta=\theta'} = 0 \\
+	&3.\ \frac{d^2}{d\theta'^2}\ K(\theta,\theta')|_{\theta=\theta'} = \int_{-\infty}^{\infty}{\frac{p'(x, \theta)^2}{p(x, \theta)}\ dx} \\
+\end{split}					
+\end{align}
+
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Statement 1}
+
+\frame{
+\frametitle{Proof of statement 1}
+Statement 1 was:
+
+\begin{align} 
+	K(\theta,\theta')|_{\theta=\theta'} = 0 \\
+\end{align}
+Notice that the quantity in the logarithm is always one, therefore the logarithm evaluates to zero:
+\begin{align} 
+\begin{split}
+	K(\theta,\theta')|_{\theta=\theta'} = \int_{-\infty}^{\infty}{\ln{1}\ p(x, \theta)dx} = \int_{-\infty}^{\infty}{0*p(x, \theta)dx} = 0
+\end{split}					
+\end{align}
+
+}
+
+\section{Statement 2}
+
+\frame{
+\frametitle{Proof of statement 2}
+Statement 2 was:
+\begin{align} 
+	\frac{d}{d\theta'}\ K(\theta,\theta')|_{\theta=\theta'} = 0 \\
+\end{align}
+For this proof we'll assume that $p(x,\theta) = p(x,\theta')$ and its derivative with respect to $\theta$ is continuous over $\mathds{R}$, in which case we can evaluate the derivative within the integral according to Leibniz' rule.
+}
+
+\frame{
+Use Leibniz' rule:
+\begin{equation}
+\begin{aligned} 
+	\frac{d}{d\theta'}\ K(\theta,\theta')|_{\theta,\theta'} &= \frac{d}{d\theta'}\ \int_{-\infty}^{\infty}{\ln{\frac{p(x,\theta)}{p(x,\theta')}}\ p(x, \theta)dx} \\
+	&= \int_{-\infty}^{\infty}{p(x, \theta)\ \frac{d}{d\theta'} \Bigg(\ln{\frac{p(x,\theta)}{p(x,\theta')}}\Bigg) dx} \\
+\end{aligned}
+\end{equation}
+
+$p(x,\theta)$ is independent of $\theta'$, so by rewriting the logarithm we get
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}p(x, \theta){\ \frac{d}{d\theta'} \Big\{ -\ln{(p(x,\theta')}) \Big\} \ dx} \\
+\end{aligned}
+\end{equation}
+
+}
+
+\frame{
+Evaluating the derivate further:
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}{-p(x, \theta)\ \frac{1}{p(x,\theta')}\ \frac{d}{d\theta'} p(x,\theta')\ dx} \\
+\end{aligned}
+\end{equation}
+Since $\theta = \theta'$, the first two factors cancel
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}{-\frac{d}{d\theta'} p(x,\theta')\ dx} \\
+	&= \frac{d}{d\theta'} \int_{-\infty}^{\infty}{-p(x,\theta')\ dx} \\
+\end{aligned}
+\end{equation}
+}
+
+
+\frame{
+and the integral is over a probability distribution, so
+\begin{equation}
+\begin{aligned} 
+	&= \frac{d}{d\theta'} \int_{-\infty}^{\infty}{-p(x,\theta')\ dx} \\
+	&= \frac{d}{d\theta'} (-1) \\
+	&= 0
+\end{aligned}
+\end{equation}
+}
+
+
+\section{Statement 3}
+\frame{
+\frametitle{Proof of statement 3}
+Similar to part 2.2, we assume now that also the second derivative of $p(x,\theta)$ with respect to $\theta$ is continuous, and use Leibniz rule:
+\begin{equation}
+\begin{aligned} 
+	\frac{d^2}{d\theta'^2}\ K(\theta,\theta')|_{\theta,\theta'} &= \frac{d^2}{d\theta'^2} \int_{-\infty}^{\infty}{\ln{\frac{p(x,\theta)}{p(x,\theta'}}\ p(x, \theta)dx} \\
+	&= \int_{-\infty}^{\infty}{p(x, \theta)\ \frac{d^2}{d\theta'^2}\ \Bigg\{ \ln{\frac{p(x,\theta)}{p(x,\theta')}}\Bigg\} \ dx} \\
+\end{aligned}
+\end{equation}
+}
+
+\frame{
+again making use of the fact that $p(x,\theta)$ is independent of $\theta'$, and evaluating the derivative:
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}{p(x, \theta)\ \frac{d^2}{d\theta'^2}\ \Bigg\{ \ln{\frac{p(x,\theta)}{p(x,\theta')}}\Bigg\} \ dx} \\
+	&= \int_{-\infty}^{\infty}{-p(x, \theta)\ \frac{d^2}{d\theta'^2}\ \ln{p(x,\theta')}\ dx} \\
+	&= \int_{-\infty}^{\infty}{-p(x, \theta)\ \frac{d}{d\theta'}\ \Bigg[ \frac{1}{p(x,\theta')}\ \frac{d}{d\theta'} p(x,\theta')\Bigg]\ dx} \\
+\end{aligned}
+\end{equation}
+}
+
+\frame{
+and evaluating the derivative again
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}{-p(x, \theta)\ \frac{d}{d\theta'}\ \Bigg[ \frac{1}{p(x,\theta')}\ \frac{d}{d\theta'} p(x,\theta')\Bigg]\ dx} \\
+	&= \int_{-\infty}^{\infty}-p(x, \theta)\ \Bigg[ -\frac{1}{p(x,\theta')^2}\ \Bigg\{ \frac{d}{d\theta'} p(x,\theta') \Bigg\}^2 \\
+	&+ \ \ \ \ \ \ \frac{1}{p(x,\theta')}\  \frac{d^2}{d\theta'^2}\ p(x,\theta') \Bigg]\ dx \\
+\end{aligned}
+\end{equation}
+multiplying by $-p(x,\theta)$ in front of the brackets:
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}{\frac{\Bigg\{ \frac{d}{d\theta'} p(x,\theta') \Bigg\}^2}{p(x,\theta')}  -  \frac{d^2}{d\theta'^2}\ p(x,\theta')\ dx} \\
+\end{aligned}
+\end{equation}
+}
+
+\frame{
+
+\begin{equation}
+\begin{aligned} 
+	&= \int_{-\infty}^{\infty}{\frac{\Bigg\{ \frac{d}{d\theta'} p(x,\theta') \Bigg\}^2}{p(x,\theta')}\ dx}  -  \frac{d^2}{d\theta'^2}\ \int_{-\infty}^{\infty}{p(x,\theta')\ dx} \\
+	&= \int_{-\infty}^{\infty}{\frac{\Bigg\{ \frac{d}{d\theta'} p(x,\theta') \Bigg\}^2}{p(x,\theta')}\ dx}  - 0 \\
+	&= \int_{-\infty}^{\infty}{\frac{\Bigg\{ \frac{d}{d\theta'} p(x,\theta') \Bigg\}^2}{p(x,\theta')}\ dx} \\
+\end{aligned}
+\end{equation}
+}
+
+\frame{
+In a different notation, this is:
+\begin{equation}
+	= \int_{-\infty}^{\infty}\frac{p'(x, \theta)^2}{p(x, \theta)}\ dx 
+\end{equation}
+which proves statement three.
+}
+
+% Define the end of the document:
+\end{document}

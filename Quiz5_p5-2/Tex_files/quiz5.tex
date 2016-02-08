@@ -1,0 +1,183 @@
+% Type of the document
+\documentclass{beamer}
+
+% elementary packages:
+\usepackage{graphicx}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{eso-pic}
+\usepackage{mathrsfs}
+\usepackage{url}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{dsfont}
+% additional packages
+\usepackage{bbm}
+
+% packages supplied with ise-beamer:
+\usepackage{cooltooltips}
+\usepackage{colordef}
+\usepackage{beamerdefs}
+\usepackage{lvblisting}
+
+% Change the pictures here:
+% logobig and logosmall are the internal names for the pictures: do not modify them. 
+% Pictures must be supplied as JPEG, PNG or, to be preferred, PDF
+\pgfdeclareimage[height=2cm]{logobig}{hulogo}
+% Supply the correct logo for your class and change the file name to "logo". The logo will appear in the lower
+% right corner:
+\pgfdeclareimage[height=0.7cm]{logosmall}{Figures/LOB_Logo}
+
+% Title page outline:
+% use this number to modify the scaling of the headline on title page
+\renewcommand{\titlescale}{1.0}
+% the title page has two columns, the following two values determine the percentage each one should get
+\renewcommand{\titlescale}{1.0}
+\renewcommand{\leftcol}{0.6}
+
+% Define the title.Don't forget to insert an abbreviation instead 
+% of "title for footer". It will appear in the lower left corner:
+\title[Quiz 5]{Selected topics in Mathematical Statistics, Quiz 5}
+% Define the authors:
+\authora{Malte Esders} % a-c
+\authorb{}
+\authorc{}
+
+% Define any internet addresses, if you want to display them on the title page:
+\def\linka{http://lvb.wiwi.hu-berlin.de}
+\def\linkb{}
+\def\linkc{}
+% Define the institute:
+\institute{Humboldt--Universität zu Berlin \\}
+
+% Comment the following command, if you don't want, that the pdf file starts in full screen mode:
+%\hypersetup{pdfpagemode=FullScreen}
+
+%Start of the document
+\begin{document}
+
+% create the title slide, layout controlled in beamerdefs.sty and the foregoing specifications
+\frame[plain]{
+\titlepage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problem Description}
+
+\frame{
+\frametitle{Problem Description}
+Quiz 5: Prove (18) under standard normal distribution, where (18) is:
+
+If $\varphi_X$ is absolutely integrable,
+\begin{equation*} 
+	(18)\  \ f_X(x) = \frac{1}{(2\pi)}\ \int_{-\infty}^{\infty}{e^{-itx} \varphi_X(t)\ dt}
+\end{equation*}					
+}
+
+\section{Lemma 1}
+
+\frame{
+\frametitle{Proof of Lemma 1}
+To prove the statement, first we will need one Lemma:
+
+\begin{equation}
+	\text{Lemma 1:} \ \ \int_{-\infty}^{\infty}{e^{-\frac{1}{2}(x-it)^2}\ dx} = \sqrt{2\pi}
+\end{equation}
+}
+
+\frame{
+We start with
+\begin{equation}
+	\int_{-\infty}^{\infty}{e^{-\frac{1}{2}(x-it)^2}\ dx}
+\end{equation}
+\\
+
+First, substitute $S = x-it$, we have
+
+\begin{equation}
+\begin{aligned}
+	\int_{-\infty-it}^{\infty-it}{e^{-\frac{1}{2}S^2}\ dS}
+\end{aligned}
+\end{equation}
+}
+
+\frame{
+We're first taking the integral between $\alpha$ and $-\alpha$ and later take the limits at $\infty$.
+Consider the integral on a contour like this: $\mathcal{C} = \alpha \rightarrow -\alpha \rightarrow -\alpha-it \rightarrow \alpha-it \rightarrow \alpha.$ \\
+Now since the normal distribution is analytic everywhere, we must have
+\begin{equation}
+	\oint_\mathcal{C}{f_X(z)\ dz} = 0
+\end{equation}
+}
+\frame{
+Writing out all four parts of the contour integral gives
+\begin{equation}
+\begin{aligned}
+	\oint_\mathcal{C}{f(S)\ dS} &= \int_{\alpha}^{-\alpha}{e^{-\frac{S^2}{2}}\ dS} \\
+	&+ \int_{-\alpha}^{-\alpha-it}{e^{-\frac{S^2}{2}}\ dS} \\
+	&+ \int_{-\alpha-it}^{\alpha-it}{e^{-\frac{S^2}{2}}\ dS} \\
+	&+ \int_{\alpha-it}^{\alpha}{e^{-\frac{S^2}{2}}\ dS} = 0
+\end{aligned}
+\end{equation}
+
+}
+
+\frame{
+As we take the limits for $\alpha \rightarrow \infty$, the first term becomes $-\sqrt{2\pi}$ (because we're integrating from right to left), and terms 2 and 4 become zero. The third term is the term we're interested in. As we solve for that term, we get
+\begin{equation}
+	\int_{-\infty-it}^{\infty-it}{e^{-\frac{S^2}{2}}\ dS} = \sqrt{2\pi}
+\end{equation}
+which completes the proof.
+
+\section{Proof of Statement (18)}
+}
+\frame{
+\frametitle{Proof of Statement (18)}
+In order to proof (18), we first compute the characteristic function $\varphi_X(t)$ of the standard normal distribution. From (17) we have
+\begin{equation}
+	\varphi_X(t) = \int_{-\infty}^{\infty}{e^{itx} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}\ dx}
+\end{equation}
+}
+
+\frame{
+Looking at the exponent of $e$, we complete the square in t
+\begin{equation} \label{eq:square_complete}
+	\begin{aligned}
+	\varphi_X(t) &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty}{e^{-\frac{1}{2} (x^2 +2itx -t^2)}  e^{-\frac{1}{2}t^2}\ dx} \\
+	&= \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}t^2}\ \int_{-\infty}^{\infty}{e^{-\frac{1}{2} (x^2 +2itx -t^2)}} \\
+	&= \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}t^2}\ \int_{-\infty}^{\infty}{e^{-\frac{1}{2} (x - it)^2}}
+	\end{aligned}
+\end{equation}
+}
+
+\frame{
+	Now by Lemma 1, the Integral in the last line of (\ref{eq:square_complete}) is $\sqrt{2\pi}$, and $\varphi_X(t)$ is
+\begin{equation}
+	\varphi_X(t) = e^{-\frac{t^2}{2}}
+\end{equation}
+\\
+To complete the proof we substitute $\varphi_X(t)$ into (18):
+\begin{equation}
+	f_X(x) = \frac{1}{2\pi}\ \int_{-\infty}^{\infty}{e^{-itx} e^{-\frac{t^2}{2}}\ dt}
+\end{equation}
+}
+
+\frame{
+We proceed by completing the squre similarly to (\ref{eq:square_complete}) and get
+\begin{equation}
+	f_X(x) = \frac{1}{2\pi} e^{-\frac{x^2}{2}}\ \int_{-\infty}^{\infty}{e^{-\frac{1}{2} (t - ix)^2}\ dt}
+\end{equation}
+Again by Lemma 1, the integral is $\sqrt{2\pi}$ and we are left with
+\begin{equation}
+	f_X(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}\ 
+\end{equation}
+which completes the proof.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
